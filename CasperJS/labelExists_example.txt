@@ -1,0 +1,6 @@
+var xPath = require("casper").selectXPath;
+
+casper.labelExists = function(labelText, tag){
+    tag = tag | "*";
+    return this.exists(xPath("//"+tag+"[text()='"+labelText+"']"));
+};

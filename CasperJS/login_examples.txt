@@ -1,0 +1,40 @@
+1.  
+	this.fill('form#f_login', { 
+		i_username: 'user', 
+		i_password:  'pass'
+	});
+	casper.thenClick('#b_login');
+	
+2.
+
+	this.fill('form#f_login', { 
+		i_username: 'user', 
+		i_password:  'pass'
+	}, true); #true stands for auto sumbit after filling the fields
+	
+3.
+	casper.thenEvaluate(function() {
+		var userName = document.querySelectorAll('[type=email]')[1];
+		userName.value = 'user';
+		var password = document.querySelectorAll('[type=password]')[1];
+		password.value = 'pass';
+	});
+	casper.thenClick('#b_login');
+	
+4. 
+
+	casper.thenEvaluate(function() {
+		var userName = document.querySelectorAll('[type=email]')[1];
+		userName.value = 'user';
+		var password = document.querySelectorAll('[type=password]')[1];
+		password.value = 'pass';
+		document.querySelector('button#b_login').click();
+	});
+	
+5.
+
+casper.then(function() {
+    this.sendKeys('form#f_login input[type="email"]', 'user');
+    this.sendKeys('form#f_login input[type="password"]', "pass");
+    this.click('form#f_login button[type="submit"]');
+});
