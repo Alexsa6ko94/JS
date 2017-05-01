@@ -1,0 +1,20 @@
+{
+  "name": "RSS Reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aboyanov",
+  "window": {
+    "toolbar": true, 
+    "frame": true, 
+    "width": 1000,
+    "height": 800
+  },
+  "license": "ISC",
+  "dependencies": {
+    "pretty-bytes": "^1.0.2"
+  }
+}
